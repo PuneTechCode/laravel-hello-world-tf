@@ -1,14 +1,21 @@
 terraform {
-    required_version = ">=1.0.0"
-    required_provider {
-        aws = {
-            source = "hashicorp/aws"
-            version = ">=5.0"
-        }
+  required_version = ">=1.0.0"
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">=5.0"
     }
+  }
 }
 
 provider "aws" {
-    region = "ap-south-1"
-    profile = "dev"
+  region  = var.region
+  profile = "dev"
+  default_tags {
+    tags = {
+      App         = "laravel",
+      Environment = "dev",
+      Owner       = "SRE"
+    }
+  }
 }
