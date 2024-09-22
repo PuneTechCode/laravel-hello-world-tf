@@ -1,4 +1,4 @@
-name: 'Destroy Ec2 instance'
+name: 'Destroy terraform'
 
 on:
   workflow_dispatch:

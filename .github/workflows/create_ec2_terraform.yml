@@ -1,4 +1,4 @@
-name: 'Create Ec2 instance'
+name: 'Create terraform'
 
 on:
   workflow_dispatch:
