@@ -11,6 +11,12 @@ resource "aws_security_group" "allow_http" {
     cidr_blocks = ["0.0.0.0/0"] # Allow all traffic for now (adjust as needed)
   }
 
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"] # Allow all traffic for now (adjust as needed)
+  }
   egress {
     from_port   = 0
     to_port     = 0
@@ -28,6 +34,7 @@ resource "aws_instance" "ec2_instances" {
   subnet_id                   = data.aws_subnet.public.id
   vpc_security_group_ids      = [aws_security_group.allow_http.id]
   associate_public_ip_address = true
+  iam_instance_profile        = "SSMReadRole"
 
   # Use user data script for post-provisioning tasks
   user_data = file("${path.module}/docs/userdata.sh")
