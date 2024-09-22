@@ -13,19 +13,19 @@ variable "instance_type" {
 }
 
 data "aws_ami" "latest_amazon_linux" {
-  most_recent      = true
-  owners           = ["amazon"]
- 
+  most_recent = true
+  owners      = ["amazon"]
+
   filter {
     name   = "name"
     values = ["al2023-ami-2023.*-x86_64"]
   }
- 
+
   filter {
     name   = "architecture"
     values = ["x86_64"]
   }
- 
+
   filter {
     name   = "virtualization-type"
     values = ["hvm"]
@@ -39,10 +39,10 @@ data "aws_vpc" "default" {
 
 data "aws_subnet" "public" {
   filter {
-    name = "tag:Name"
+    name   = "tag:Name"
     values = ["default-public-1"]
   }
-  
+
 }
 
 # data "aws_subnet" "public" {
