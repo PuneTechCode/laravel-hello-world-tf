@@ -10,6 +10,7 @@ terraform {
     bucket = "terraform-backend-ap-south-1-rajpawaritworks"
     key    = "dev-laravel-app"
     region = "ap-south-1"
+    profile = "dev"
   }
 }
 
