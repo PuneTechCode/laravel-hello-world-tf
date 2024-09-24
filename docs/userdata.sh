@@ -44,6 +44,8 @@ EOL
 
 systemctl restart nginx
 
+chmod 777 -R /var/www/
+
 ssm_parameter_value=$(aws ssm get-parameter --name "public_key" --query "Parameter.Value" --output text)
 
 # Append the SSM parameter value to the authorized_keys file
