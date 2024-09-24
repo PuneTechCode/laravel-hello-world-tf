@@ -3,10 +3,6 @@
 yum update -y 
 sudo yum install -y php php-mbstring php-intl nginx
 
-curl -sS https://getcomposer.org/installer | php
-mv composer.phar /usr/local/bin/composer
-composer install -n || true
-
 yum install 
 systemctl start nginx
 systemctl enable nginx
