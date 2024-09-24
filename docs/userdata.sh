@@ -3,7 +3,6 @@
 yum update -y 
 sudo yum install -y php php-mbstring php-intl nginx
 
-yum install 
 systemctl start nginx
 systemctl enable nginx
 
