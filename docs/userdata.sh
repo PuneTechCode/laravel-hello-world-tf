@@ -15,7 +15,7 @@ cat <<EOL > /etc/nginx/conf.d/laravel.conf
 server {
     listen 80;
     server_name 0.0.0.0;
-    root /var/www/html/laravel-hello-world/public;
+    root /var/www/html/current/public;
 
     add_header X-Frame-Options "SAMEORIGIN";
     add_header X-XSS-Protection "1; mode=block";
